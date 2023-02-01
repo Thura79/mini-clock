@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" crossorigin src="/assets/index.22944fc1.js"></script>
+    <link rel="stylesheet" href="/assets/index.38dbb371.css">
+  </head>
+  <body>
+    <div class=" ">
+      <h1 class=" text-center mt-5">MYANMAR Local Time</h1>
+      <div class=" d-flex justify-content-center mt-5 pt-5 gap-3">
+        <div class="card">
+          <h2 id="hour">CARD</h2>
+        </div>
+        <div class="card">
+          <h2 id="minute">CARD</h2>
+        </div>
+        <div class="card">
+          <h2 id="second">CARD</h2>
+        </div>
+        <div class="card">
+          <h2 id="session">AM</h2>
+        </div>
+      </div>
+    </div>
+
+    
+
+    <script>
+      let hour = document.getElementById('hour');
+      let minute = document.getElementById('minute');
+      let second = document.getElementById('second');
+      let session = document.getElementById('session');
+
+      let time = () => {
+        let date = new Date();
+      hour.innerHTML = date.getHours();
+      minute.innerHTML = date.getMinutes();
+      second.innerHTML = date.getSeconds();
+
+      if(hour.innerHTML > 12) {
+        hour.innerHTML -= 12;
+        session.innerHTML = "PM"
+      }else{
+        session.innerHTML = "AM"
+
+      }
+
+
+      }
+
+      setInterval(time, 10)
+    </script>
+  </body>
+</html>
